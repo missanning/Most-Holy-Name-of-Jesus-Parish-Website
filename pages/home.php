@@ -1,8 +1,5 @@
 <div class="video-section">
-    <video autoplay muted playsinline loop controls>
-        <source src="video/SAMPLE PARISH VID.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <iframe width="100%" height="500" src="https://www.youtube.com/embed/NmnJVLS6mGI" title="Parish Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <p class="video-caption">A glimpse into the life, faith &amp; community of the Most Holy Name of Jesus Parish</p>
 </div>
 
