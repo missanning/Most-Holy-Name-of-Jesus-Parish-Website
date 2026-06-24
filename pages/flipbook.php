@@ -2,29 +2,7 @@
 // ── Add your book pages here in order ──────────────────
 // Place images inside: images/flipbook/
 // Recommended size: 800x1100px (portrait) or consistent size
-$pages = [
-    'images/flipbook/1.png',
-    'images/flipbook/2.png',
-    'images/flipbook/3.png',
-    'images/flipbook/4.png',
-    'images/flipbook/5.png',
-    'images/flipbook/6.png',
-    'images/flipbook/7.png',
-    'images/flipbook/8.png',
-    'images/flipbook/9.png',
-    'images/flipbook/10.png',
-    'images/flipbook/11.png',
-    'images/flipbook/12.png',
-    'images/flipbook/13.png',
-    'images/flipbook/14.png',
-    'images/flipbook/15.png',  
-    'images/flipbook/16.png',
-    'images/flipbook/17.png',
-    'images/flipbook/18.png',  
-    'images/flipbook/19.png',
-    'images/flipbook/20.png',   
-    
-];
+$pages = array_map(fn($i) => "images/flipbook/{$i}.png", range(1, 91));
 
 // Filter only existing pages
 $pages = array_values(array_filter($pages, fn($p) => file_exists($p)));
