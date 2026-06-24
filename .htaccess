@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/parish-laravel/public/
+    RewriteRule ^parish-laravel/(.*)$ /parish-laravel/public/$1 [L,R=301]
+</IfModule>
