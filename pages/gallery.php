@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../includes/db.php'; ?>
 <div class="page-header">
     <h2>Gallery</h2>
     <p>A glimpse of our parish life, events, and celebrations.</p>
@@ -5,18 +6,16 @@
 
 <section>
     <h3>Parish Life</h3>
+    <?php $photos = $pdo->query("SELECT * FROM gallery ORDER BY sort_order, id")->fetchAll(); ?>
+    <?php if ($photos): ?>
     <div class="gallery-grid">
-        <?php
-        $items = ['&#9970;','&#127882;','&#127760;','&#128149;','&#127925;','&#128591;','&#127891;','&#9749;','&#127860;','&#128247;','&#128100;','&#127926;'];
-        $labels = ['Church Interior','Parish Fiesta','Community','Mass Celebration','Music Ministry','Adoration','Youth Camp','Morning Mass','Outreach','Media Team','Parish Staff','Choir Concert'];
-        foreach ($items as $i => $emoji): ?>
-        <div class="gallery-item" title="<?= $labels[$i] ?>"><?= $emoji ?></div>
+        <?php foreach ($photos as $g): ?>
+        <div class="gallery-item" title="<?= htmlspecialchars($g['caption']) ?>">
+            <img src="images/<?= htmlspecialchars($g['filename']) ?>" alt="<?= htmlspecialchars($g['caption']) ?>" style="width:100%;height:100%;object-fit:cover;">
+        </div>
         <?php endforeach; ?>
     </div>
-</section>
-
-<section>
-    <p style="color:#888; font-size:.9rem; text-align:center; margin-top:20px;">
-        &#128247; Replace the placeholders above with actual <code>&lt;img&gt;</code> tags pointing to your <code>images/</code> folder.
-    </p>
+    <?php else: ?>
+    <p style="color:var(--text2);text-align:center;font-style:italic;">No photos yet. Upload images from the Admin panel.</p>
+    <?php endif; ?>
 </section>

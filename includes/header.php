@@ -1,4 +1,12 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) session_start();
+require_once __DIR__ . '/db.php';
+$me_nav = null;
+if (isset($_SESSION['user_id'])) {
+    $s = $pdo->prepare("SELECT is_admin FROM users WHERE id=?");
+    $s->execute([$_SESSION['user_id']]);
+    $me_nav = $s->fetch();
+}
 $navLinks = [
     'home'          => 'Home',
     'about'         => 'About Us',
@@ -48,6 +56,18 @@ $current = isset($_GET['page']) ? $_GET['page'] : 'home';
             </li>
             <?php endforeach; ?>
         </ul>
+        <div class="nav-auth">
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <?php if ($me_nav && $me_nav['is_admin']): ?>
+                <a href="?page=admin" class="nav-auth-btn <?= $current==='admin'?'active':'' ?>">&#9881; Admin</a>
+                <?php endif; ?>
+                <span class="nav-username">&#9769; <?= htmlspecialchars($_SESSION['username']) ?></span>
+                <a href="auth/logout.php" class="nav-auth-btn">Sign Out</a>
+            <?php else: ?>
+                <a href="?page=login" class="nav-auth-btn <?= $current === 'login' ? 'active' : '' ?>">Login</a>
+                <a href="?page=signup" class="nav-auth-btn nav-auth-btn--primary <?= $current === 'signup' ? 'active' : '' ?>">Sign Up</a>
+            <?php endif; ?>
+        </div>
     </nav>
 </div>
 
