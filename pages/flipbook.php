@@ -4,6 +4,7 @@
 // Recommended size: 800x1100px (portrait) or consistent size
 $pages = array_map(fn($i) => "images/flipbook/{$i}.png", range(1, 91));
 
+
 // Filter only existing pages
 $pages = array_values(array_filter($pages, fn($p) => file_exists($p)));
 ?>
