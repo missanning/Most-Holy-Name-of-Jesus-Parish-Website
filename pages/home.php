@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../includes/db.php'; ?>
 <div class="video-section">
     <iframe width="100%" height="500" src="https://www.youtube.com/embed/NmnJVLS6mGI" title="Parish Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <p class="video-caption">A glimpse into the life, faith &amp; community of the Most Holy Name of Jesus Parish</p>
@@ -58,10 +59,14 @@
             <tr><th>Date</th><th>Event</th><th>Time</th><th>Venue</th></tr>
         </thead>
         <tbody>
-            <tr><td>July 20, 2025</td><td>Youth Fellowship Night</td><td>6:00 PM</td><td>Parish Hall</td></tr>
-            <tr><td>July 25, 2025</td><td>Parish Family Day</td><td>9:00 AM</td><td>Parish Grounds</td></tr>
-            <tr><td>August 1, 2025</td><td>Rosary Procession</td><td>5:00 PM</td><td>Church Grounds</td></tr>
-            <tr><td>August 10, 2025</td><td>Choir Recital</td><td>7:00 PM</td><td>Main Church</td></tr>
+            <?php foreach ($pdo->query("SELECT * FROM events ORDER BY id ASC") as $e): ?>
+            <tr>
+                <td><?= htmlspecialchars($e['event_date']) ?></td>
+                <td><?= htmlspecialchars($e['title']) ?></td>
+                <td><?= htmlspecialchars($e['time']) ?></td>
+                <td><?= htmlspecialchars($e['venue']) ?></td>
+            </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </section>
