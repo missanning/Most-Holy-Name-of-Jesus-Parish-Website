@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../includes/db.php'; ?>
 <div class="page-header">
     <h2>Ministries</h2>
     <p>Discover how you can serve God and the community through our parish ministries.</p>
