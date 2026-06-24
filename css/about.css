@@ -1,0 +1,212 @@
+/* ── META BAR ─────────────────────────────────────────── */
+.meta-bar {
+    display: flex;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+}
+.meta-item {
+    flex: 1;
+    padding: 1.5rem;
+    border-right: 1px solid var(--border);
+    background: var(--white);
+}
+.meta-item:last-child { border-right: none; }
+.meta-item .label {
+    font-size: .7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.meta-item .value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--red2);
+    font-weight: 600;
+}
+
+/* ── TIMELINE ─────────────────────────────────────────── */
+.milestone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+    border-bottom: 1px solid var(--border);
+}
+.milestone:last-child { border-bottom: none; }
+.milestone.reverse .img-panel { order: 2; }
+.milestone.reverse .content-panel { order: 1; }
+
+.img-panel {
+    position: relative;
+    overflow: hidden;
+    background: var(--brown3);
+    min-height: 360px;
+}
+.img-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: .82;
+    filter: sepia(.15);
+    transition: opacity .45s, transform .55s, filter .45s;
+}
+.milestone:hover .img-panel img {
+    opacity: 1;
+    transform: scale(1.04);
+    filter: sepia(0);
+}
+.year-overlay {
+    position: absolute;
+    bottom: -.1em;
+    left: -.04em;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(6rem, 16vw, 11rem);
+    font-weight: 700;
+    color: rgba(255,255,255,.08);
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -.04em;
+    user-select: none;
+    transition: color .45s;
+}
+.milestone:hover .year-overlay { color: rgba(200,144,58,.22); }
+.year-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--gold);
+    color: var(--brown3);
+    font-family: 'Cinzel', serif;
+    font-size: .85rem;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+}
+.milestone.reverse .year-badge { right: auto; left: 1.5rem; }
+
+.content-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.5rem 4rem;
+    background: var(--white);
+}
+.milestone.reverse .content-panel { padding: 3.5rem 4rem 3.5rem 3.5rem; }
+
+.section-label {
+    font-size: .68rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.accent-rule {
+    width: 36px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 16px;
+    border-radius: 2px;
+}
+.content-panel h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.25;
+    color: var(--red2);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.content-panel p {
+    font-size: .97rem;
+    line-height: 1.85;
+    color: var(--text2);
+    margin-bottom: 0;
+}
+.content-panel p strong { color: var(--text); font-weight: 600; }
+
+/* ── PRIESTS ──────────────────────────────────────────── */
+.priests-section {
+    padding: 60px 0;
+    background: var(--cream2);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+}
+.priests-section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+.priests-section .section-label { margin-bottom: 8px; }
+.priests-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--red2);
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+.priests-grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px;
+}
+.priest-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    border-radius: 3px;
+    transition: border-color .2s, transform .2s;
+}
+.priest-row:hover { border-color: var(--gold); transform: translateX(4px); }
+.priest-num {
+    font-family: 'Cinzel', serif;
+    font-size: .85rem;
+    color: var(--gold);
+    font-weight: 600;
+    min-width: 26px;
+    opacity: .8;
+}
+.priest-name {
+    font-family: 'Playfair Display', serif;
+    font-size: .97rem;
+    color: var(--text);
+    flex: 1;
+    line-height: 1.4;
+}
+.priest-current {
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: var(--red2);
+    color: var(--gold3);
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+}
+
+/* ── ABOUT RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 768px) {
+    .milestone { grid-template-columns: 1fr; }
+    .milestone.reverse .img-panel { order: 0; }
+    .milestone.reverse .content-panel { order: 1; }
+    .img-panel { min-height: 260px; }
+    .content-panel,
+    .milestone.reverse .content-panel { padding: 2rem 1.5rem; }
+    .meta-bar { flex-wrap: wrap; }
+    .meta-item { flex: 0 0 50%; border-bottom: 1px solid var(--border); }
+}

@@ -1,0 +1,70 @@
+<div class="video-section">
+    <video autoplay muted playsinline loop controls>
+        <source src="video/SAMPLE PARISH VID.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p class="video-caption">A glimpse into the life, faith &amp; community of the Most Holy Name of Jesus Parish</p>
+</div>
+
+<div class="hero">
+    <div class="hero-inner">
+    <span class="hero-ornament">Most Holy Name of Jesus Parish &nbsp;&mdash;&nbsp; Est. 1952</span>
+    <div class="hero-badge">Diocese of San Pablo</div>
+    <h2>Where Faith Meets<br>Community</h2>
+    <h3>Barangay Narra &nbsp;&bull;&nbsp; City of San Pedro, Laguna</h3>
+    <div class="divider"></div>
+    <p>"Where faith is nurtured, community is built,<br>and the love of God is proclaimed to all."</p>
+    <a href="?page=mass-schedule" class="btn">View Mass Schedule</a>
+    </div>
+</div>
+
+<div class="section-title">
+    <span class="ornament">Our Parish Life</span>
+    <h2>Faith &amp; Community</h2>
+    <div class="line"></div>
+</div>
+
+<div class="cards">
+    <div class="card">
+        <img src="images/dailymass.jpg" alt="Daily Holy Mass" class="card-img">
+        <h3>Sunday Holy Mass</h3>
+        <p>7:00am & 6:30pm at Parish</p>
+        <p>9:00am at SM Center San Pedro</p>
+        <p>All the faithful are warmly welcomed.</p>
+    </div>
+    <div class="card">
+        <img src="images/sacraments.jpg" alt="Sacraments" class="card-img">
+        <h3>Sacraments</h3>
+        <p>Baptism, Confirmation, Eucharist, and all sacraments of the Church are available to the faithful.</p>
+    </div>
+    <div class="card">
+        <img src="images/ministries.jpg" alt="Ministries" class="card-img">
+        <h3>Ministries</h3>
+        <p>Join one of our many active parish ministries and answer God's call to serve the community.</p>
+    </div>
+    <div class="card">
+        <img src="images/events.jpg" alt="News &amp; Events" class="card-img">
+        <h3>News &amp; Events</h3>
+        <p>Stay informed with the latest parish news, upcoming events, and community announcements.</p>
+    </div>
+</div>
+
+<div class="section-title">
+    <span class="ornament">What's Coming Up</span>
+    <h2>Upcoming Events</h2>
+    <div class="line"></div>
+</div>
+
+<section>
+    <table>
+        <thead>
+            <tr><th>Date</th><th>Event</th><th>Time</th><th>Venue</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>July 20, 2025</td><td>Youth Fellowship Night</td><td>6:00 PM</td><td>Parish Hall</td></tr>
+            <tr><td>July 25, 2025</td><td>Parish Family Day</td><td>9:00 AM</td><td>Parish Grounds</td></tr>
+            <tr><td>August 1, 2025</td><td>Rosary Procession</td><td>5:00 PM</td><td>Church Grounds</td></tr>
+            <tr><td>August 10, 2025</td><td>Choir Recital</td><td>7:00 PM</td><td>Main Church</td></tr>
+        </tbody>
+    </table>
+</section>
