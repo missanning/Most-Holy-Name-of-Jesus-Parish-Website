@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="video-section">
-    <iframe width="100%" height="500" src="https://www.youtube.com/embed/NmnJVLS6mGI" title="Parish Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="500" src="https://www.facebook.com/share/v/1GkSiNB6ZR/" title="Parish Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <p class="video-caption">A glimpse into the life, faith &amp; community of the Most Holy Name of Jesus Parish</p>
 </div>
 <div class="hero">
